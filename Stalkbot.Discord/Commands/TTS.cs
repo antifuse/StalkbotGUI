@@ -8,7 +8,7 @@ using Timer = System.Timers.Timer;
 
 namespace StalkbotGUI.Stalkbot.Discord.Commands
 {
-    public class Tts : AlertCommand
+    public class Tts : BaseCommandModule
     {
         /// <summary>
         /// Command used for playing tts audio for the user

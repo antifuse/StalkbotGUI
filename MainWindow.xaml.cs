@@ -12,6 +12,7 @@ using Newtonsoft.Json;
 using StalkbotGUI.Stalkbot.Discord;
 using StalkbotGUI.Stalkbot.Utilities;
 using StalkbotGUI.Stalkbot.Utilities.UI;
+using Windows.UI.Notifications;
 using MessageBox = System.Windows.MessageBox;
 using ProgressBar = StalkbotGUI.Stalkbot.Utilities.UI.ProgressBar;
 
@@ -304,8 +305,10 @@ namespace StalkbotGUI
         /// <param name="sender">Window object</param>
         /// <param name="e">Event args</param>
         private async void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-            => await _client.Dispose();
-
+        {
+            await _client.Dispose();
+            ToastNotificationManager.History.Clear();
+        }
         #endregion
     }
 }
